@@ -2,6 +2,14 @@
 
 A simple middleware written in go. This is a learning exercise project.
 The idea is to write a simple middleware in which i'm applying the concepts as i learn them.
+At the moment of this writing, the middleware is able to:
+- Serve static files
+- Serve dynamic content
+- Handle GET and POST requests
+- Log all requests
+- Validate the request method
+
+New features will be added as i learn them.
 
 ## How to build
 
@@ -53,3 +61,5 @@ The server has 4 endpoints:
 | /contactme | Returns a simple contact me form |
 | /static/ | Returns a static file |
 | /api/contactme | Returns a json response |
+
+
