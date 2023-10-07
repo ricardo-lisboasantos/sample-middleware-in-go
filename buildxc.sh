@@ -2,7 +2,7 @@
 
 ## Simple script to cross-compile the project
 
-EXE_NAME="xc"
+EXE_NAME="mw-server"
 
 # Build for linux x64
 build_linux_x64() {

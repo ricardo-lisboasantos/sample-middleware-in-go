@@ -15,6 +15,8 @@ On windows:
 NOT IMPLEMENTED YET
 ```
 
+The executable will be in the build/<platform> folder.
+
 ## How to install
 
 The server can be started simply by running the executable.
@@ -28,16 +30,16 @@ On linux:
 
 On linux (assuming the executable is in your PATH):
 ```bash
-xc
+mw-server
 ```
 else
 ```bash
-./xc
+./mw-server
 ```
 
 On windows:
 ```powershell
-./xc.exe
+./mw-server.exe
 ```
 
 ## How to use
