@@ -2,97 +2,99 @@
 
 ## Simple script to cross-compile the project
 
+EXE_NAME="xc"
+
 # Build for linux x64
 build_linux_x64() {
     echo "Building for Linux x64"
     mkdir -p build/linux/x64
-    GOOS=linux GOARCH=amd64 go build -o build/linux/x64/xc
+    GOOS=linux GOARCH=amd64 go build -o build/linux/x64/$EXE_NAME
 }
 
 # Build for linux x86
 build_linux_x86() {
     echo "Building for Linux x86"
     mkdir -p build/linux/x86
-    GOOS=linux GOARCH=386 go build -o build/linux/x86/xc
+    GOOS=linux GOARCH=386 go build -o build/linux/x86/$EXE_NAME
 }
 
 # Build for windows x64
 build_windows_x64() {
     echo "Building for Windows x64"
     mkdir -p build/windows/x64
-    GOOS=windows GOARCH=amd64 go build -o build/windows/x64/xc.exe
+    GOOS=windows GOARCH=amd64 go build -o build/windows/x64/$EXE_NAME.exe
 }
 
 # Build for windows x86
 build_windows_x86() {
     echo "Building for Windows x86"
     mkdir -p build/windows/x86
-    GOOS=windows GOARCH=386 go build -o build/windows/x86/xc.exe
+    GOOS=windows GOARCH=386 go build -o build/windows/x86/$EXE_NAME.exe
 }
 
 # Build for darwin x64
 build_darwin_x64() {
     echo "Building for Darwin x64"
     mkdir -p build/darwin/x64
-    GOOS=darwin GOARCH=amd64 go build -o build/darwin/x64/xc
+    GOOS=darwin GOARCH=amd64 go build -o build/darwin/x64/$EXE_NAME
 }
 
 # Build for darwin x86
 build_darwin_x86() {
     echo "Building for Darwin x86"
     mkdir -p build/darwin/x86
-    GOOS=darwin GOARCH=386 go build -o build/darwin/x86/xc
+    GOOS=darwin GOARCH=386 go build -o build/darwin/x86/$EXE_NAME
 }
 
 # Build for linux arm
 build_linux_arm() {
     echo "Building for Linux ARM"
     mkdir -p build/linux/arm
-    GOOS=linux GOARCH=arm go build -o build/linux/arm/xc
+    GOOS=linux GOARCH=arm go build -o build/linux/arm/$EXE_NAME
 }
 
 # Build for linux arm64
 build_linux_arm64() {
     echo "Building for Linux ARM64"
     mkdir -p build/linux/arm64
-    GOOS=linux GOARCH=arm64 go build -o build/linux/arm64/xc
+    GOOS=linux GOARCH=arm64 go build -o build/linux/arm64/$EXE_NAME
 }
 
 # Build for android arm
 build_android_arm() {
     echo "Building for Android ARM"
     mkdir -p build/android/arm
-    GOOS=android GOARCH=arm go build -o build/android/arm/xc
+    GOOS=android GOARCH=arm go build -o build/android/arm/$EXE_NAME
 }
 
 # Build for android arm64
 build_android_arm64() {
     echo "Building for Android ARM64"
     mkdir -p build/android/arm64
-    GOOS=android GOARCH=arm64 go build -o build/android/arm64/xc
+    GOOS=android GOARCH=arm64 go build -o build/android/arm64/$EXE_NAME
 }
 
 # Build for android x86
 build_android_x86() {
     echo "Building for Android x86"
     mkdir -p build/android/x86
-    GOOS=android GOARCH=386 go build -o build/android/x86/xc
+    GOOS=android GOARCH=386 go build -o build/android/x86/$EXE_NAME
 }
 
 # Build for android x64
 build_android_x64() {
     echo "Building for Android x64"
     mkdir -p build/android/x64
-    GOOS=android GOARCH=amd64 go build -o build/android/x64/xc
+    GOOS=android GOARCH=amd64 go build -o build/android/x64/$EXE_NAME
 }
 
 # Build for all platforms
 build_all() {
     build_linux_x64
     # build_linux_x86
-    # build_windows_x64
+    build_windows_x64
     # build_windows_x86
-    # build_darwin_x64
+    build_darwin_x64
     # build_darwin_x86
     # build_linux_arm
     # build_linux_arm64
@@ -105,7 +107,7 @@ build_all() {
 # Build for the current platform
 build_current() {
     echo "Building for current platform"
-    go build -o build/xc
+    go build -o build/$EXE_NAME
 }
 
 # Build for specific platform
